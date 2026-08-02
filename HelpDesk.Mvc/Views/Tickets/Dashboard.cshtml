@@ -1,0 +1,32 @@
+﻿@model HelpDesk.Mvc.Models.DashboardViewModel
+
+<h2>Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="dashboard-card card-total">
+            <div class="card-body">
+                <h5 class="card-title">Total Tickets</h5>
+                <p class="card-text fs-2">@Model.TotalTickets</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dashboard-card card-open">
+            <div class="card-body">
+                <h5 class="card-title">Open Tickets</h5>
+                <p class="card-text fs-2">@Model.OpenTickets</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dashboard-card card-closed">
+            <div class="card-body">
+                <h5 class="card-title">Closed Tickets</h5>
+                <p class="card-text fs-2">@Model.ClosedTickets</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary" style="margin-top: 20px;">View All Tickets</a>

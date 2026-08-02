@@ -1,0 +1,61 @@
+﻿@model List<HelpDesk.Mvc.Models.Ticket>
+
+<h2>Filter Tickets by Status</h2>
+
+<form asp-action="FilterByStatus" method="post" style="display: flex; align-items: flex-end; gap: 12px; max-width: none;">
+    <div style="min-width: 220px;">
+        <label>Status</label>
+        <select name="status" class="form-control" style="margin-bottom: 0;">
+            <option value="Open">Open</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+@if (ViewBag.SelectedStatus != null)
+{
+    <h4 style="margin-top: 24px; font-weight: 600; font-size: 1.1rem;">Showing tickets with status: @ViewBag.SelectedStatus</h4>
+
+    @if (Model.Count == 0)
+    {
+        <p>No tickets found with this status.</p>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Raised By</th>
+                        <th>Created Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model)
+                    {
+                        <tr>
+                            <td>@ticket.Id</td>
+                            <td>@ticket.Title</td>
+                            <td>@ticket.Priority</td>
+                            <td>@ticket.Status</td>
+                            <td>@ticket.RaisedBy</td>
+                            <td>@ticket.CreatedDate</td>
+                            <td>
+                                <a asp-action="Details" asp-route-id="@ticket.Id" class="btn btn-info btn-sm">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+}
