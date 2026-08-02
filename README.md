@@ -35,3 +35,23 @@ Help Desk Ticket Management System built using ASP.NET Core Web API, ASP.NET Cor
 4. Run `dotnet ef database update` inside the `HelpDesk.Api` folder to create the database
 5. Run both `HelpDesk.Api` and `HelpDesk.Mvc` projects (multiple startup projects)
 6. Navigate to the root URL to see the Dashboard
+
+## Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### All Tickets
+![All Tickets](screenshots/all-tickets.png)
+
+### Raise New Ticket
+![Create Ticket](screenshots/create-ticket.png)
+
+### Edit Ticket
+![Edit Ticket](screenshots/edit-ticket.png)
+
+### Ticket Details
+![Ticket Details](screenshots/ticket-details.png)
+
+### Filter by Status
+![Filter by Status](screenshots/filter-by-status.png)
